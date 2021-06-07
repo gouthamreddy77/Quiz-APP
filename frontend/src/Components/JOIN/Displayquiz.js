@@ -41,7 +41,7 @@ export default function Displayquiz({quiz}) {
 				{showScore ? (
 					<div className='score-section'>
 						<div>You scored {score} out of {questions.length}</div>
-						<div><Link to="/"><button className="btn btn-sucess">Home</button></Link></div>
+						<div><Link to="/home"><button className="btn btn-sucess">Home</button></Link></div>
 					</div>
 				) : (
 					<>

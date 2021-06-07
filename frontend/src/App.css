@@ -4,7 +4,7 @@
 } */
 /*Home page*/
 .Home2-container{
-  margin-top: 12%;
+  margin-top: 1%;
 }
 .conatiner-left{
   width:50%;
@@ -257,4 +257,49 @@ padding: 1%;
 .react-responsive-modal-modal {
   width: 80%;
   height: 60%;
+}
+
+.login-container{
+  padding: 2%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login1{
+  /* border: 2px solid black; */
+  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+  width: 40%;
+  height: 60%;
+  padding: 2%;
+}
+.innerlogin1{
+  display: flex;
+  height: 100%;
+  padding: 3%;
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+.register-container{
+  padding: 2%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.register1{
+  /* border: 2px solid black; */
+  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+  width: 40%;
+  height: 75%;
+  padding: 2%;
+}
+.innerregister1{
+  display: flex;
+  height: 100%;
+  padding: 3%;
+  flex-direction: column;
+  justify-content: space-around;
+  
 }

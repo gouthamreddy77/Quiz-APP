@@ -45,6 +45,45 @@ router.post('/register',async (req,res)=>{
       }
 })
 
+router.post('/login',async (req,res)=>{
+
+    console.log("********request from client********\n",req.body);
+
+    try {
+
+        const {email,password} = req.body
+
+        if(email === "" || email === null || password === "" || password === null)
+            return res.send({message:"Plese enter all the fields"})
+
+        if(password.length <= 6)
+            return res.send({message:"Password length should be atleast 7"});
+
+        var resdb = await User.findOne({email})
+
+        if(resdb === null)
+            return res.send({message:"User doesn't exist"})
+
+        if(resdb.password !== password)
+        return res.send({message:"Email/Password Dosn't Match"})
+
+        console.log("*********Response from DB***********");
+        console.log(resdb); //when success it print.
+
+        const token = jwt.sign({user:resdb._id},process.env.JWT_SECRET);
+        res.cookie("token",token,
+        {
+            httpOnly:true,
+            secure: true,
+            sameSite: "none",
+        }).send({message:"User Login Sucessful"})
+        
+      } catch (err) {
+            console.log('err' + err);
+            res.status(500).send("Internal Error");
+      }
+})
+
 router.get("/logout", (req, res) => {
     res
       .cookie("token", "", {

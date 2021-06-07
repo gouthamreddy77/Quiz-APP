@@ -1,14 +1,13 @@
 import React from 'react'
 import { BrowserRouter} from "react-router-dom";
 import './App.css';
-import Quizcontainer from './Components/Quizcontainer';
-import Register from "./Components/Register"
+import Home from './Components/Home';
+
 function App() {
   return (
     <>
       <BrowserRouter>
-        {/* <Quizcontainer/> */}
-        <Register/>
+        <Home/>
       </BrowserRouter>
     </>
   );
