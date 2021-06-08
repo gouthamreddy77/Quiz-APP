@@ -5,13 +5,12 @@ import {useHistory} from "react-router-dom"
 
 const Login = () => {
     
-    const {getLoggedIn} = useContext(AuthContext) 
+    const {getLoggedIn,setuserid} = useContext(AuthContext) 
     const[email , setemail] = useState("")
     const[password , setpassword] = useState("")
     const history = useHistory()
 
     const login = async ()=>{
-        console.log(email,password);
         try{
             const loggedInRes = await fetch("/user/login",{
                 method:"POST",
@@ -27,6 +26,8 @@ const Login = () => {
             alert(res.message)
             if(res.message==="User Login Sucessful"){
                 await getLoggedIn()
+                setuserid(res._id)
+                localStorage.setItem("user-id",JSON.stringify({_id:res._id}))
                 history.push("/home")
             }
         }
@@ -44,7 +45,7 @@ const Login = () => {
                         <label>Email:</label>
                         <input type="text" value={email} onChange={(e)=> setemail(e.target.value)}></input>
                         <label>Password:</label>
-                        <input type="text" value={password} onChange={(e)=> setpassword(e.target.value)}></input>
+                        <input type="password" value={password} onChange={(e)=> setpassword(e.target.value)}></input>
                         <button className="btn btn-primary" onClick={login}>Login</button>
                         <Link to="/">New Here? Register</Link>
                     </div>

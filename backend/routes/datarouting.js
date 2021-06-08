@@ -14,11 +14,11 @@ router.post('/get',auth,async (req, res) => {
         newquiz = await quiz.find({_id:id})
         console.log("*******from db********");
         console.log(newquiz);
-        if(newquiz== null || newquiz==[]) 
-        res.json({"message":"Quiz Not Found"})
+        if(newquiz === null || newquiz === []) 
+            return res.json({"message":"Quiz Not Found"})
         else{
             console.log(newquiz);   
-            res.json({newquiz});
+            return res.json({newquiz,message:"Quiz Found"});
         }
     }
     catch(err){
@@ -45,5 +45,7 @@ router.post('/post',auth,async (req,res) =>{
 
     res.json({id:instance.id})
 })
+
+
 
 module.exports = router

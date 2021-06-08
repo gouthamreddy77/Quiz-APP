@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Navbar from "./Navbar"
 const Home2 = () => {
     return (
         <>
@@ -15,8 +14,9 @@ const Home2 = () => {
                                 <div>
                                     <h5>Created by</h5>
                                     <h1>GOUTHAM REDDY <br/>LYAGALA</h1>
-                                    <h1>GOUTHAM REDDY <br/>LYAGALA</h1>
-                                    <h1>GOUTHAM REDDY <br/>LYAGALA</h1>
+                                    <h2>Users can able to<br/> 
+                                    Create and Join the Quiz<br/>
+                                    and also able to view the Responses</h2>
                                 </div>
                             </div>
                         </div>

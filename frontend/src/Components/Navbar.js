@@ -10,6 +10,7 @@ const Navbar = () => {
                 method:"GET"
             })
             await getLoggedIn();
+            localStorage.removeItem("user-id"); 
             history.push("/")
         }
         catch(err){
@@ -18,7 +19,7 @@ const Navbar = () => {
     }
     return (
         <>
-            <nav className="navbar navbar-expand-sm navbar-light bg-light ">
+            <nav className="navbar sticky-top navbar-expand-sm navbar-light bg-light ">
                 <div className="container-fluid">
 
                    <Link className="navbar-brand text-primary " to="#">Quizz App</Link>

@@ -9,7 +9,8 @@ const Showcode = ({id}) => {
                 <div><h1>Quiz Created Sucessfully</h1></div>
                     <div><h3>Share The Code With Your Students...</h3></div>
                     <div><input type="text" value={id} readOnly></input></div>
-                    <div><Link to="/"><button className="btn btn-info btn-lg">Home</button></Link></div>
+                    <div><Link to="/home"><button className="btn btn-info btn-lg">Home</button></Link></div>
+                    <div><Link to="/dashboard"><button className="btn btn-info btn-lg">Dashboard</button></Link></div>
                 </div>
             </Modal>
         </div>

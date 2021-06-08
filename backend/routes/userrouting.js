@@ -69,14 +69,14 @@ router.post('/login',async (req,res)=>{
 
         console.log("*********Response from DB***********");
         console.log(resdb); //when success it print.
-
+        console.log(resdb._id);
         const token = jwt.sign({user:resdb._id},process.env.JWT_SECRET);
         res.cookie("token",token,
         {
             httpOnly:true,
             secure: true,
             sameSite: "none",
-        }).send({message:"User Login Sucessful"})
+        }).send({message:"User Login Sucessful",_id:resdb._id})
         
       } catch (err) {
             console.log('err' + err);
@@ -107,5 +107,53 @@ router.get("/loggedIn", (req, res) => {
         res.json({loggedin:false});
     }
 });
-    
+
+router.post("/createdquiz",async(req,res)=>{
+    const {userid,quizid,quiztitle,questions} = req.body;
+    var user
+    try{
+        user = await User.findOne({_id:userid})
+        user.created.push({quizid,quiztitle,questions,responses:0})
+        await user.save()
+        console.log(user);
+    }
+    catch(err){
+        console.log(err);
+    }
+    res.send(user)
+})
+
+router.post("/attempted",async(req,res)=>{
+    const {userid,quizid,quiztitle,questions,score} = req.body;
+    var user
+    try{
+        user = await User.findOne({_id:userid})
+        user.attempted.push({quizid,quiztitle,questions,score})
+        await user.save()
+        console.log(user);
+    }
+    catch(err){
+        console.log(err);
+    }
+    res.send(user)
+})
+
+router.post("/viewquiz",async (req,res)=>{
+    const _id = req.body.userid
+    var user
+    try{
+        if(_id==null || _id=== "")
+            return res.send({message:"User not found"})
+        user = await User.findOne({_id})
+
+    }catch(err){
+        console.log(err);
+    }
+    console.log(user);
+    res.send({created:user.created,attempted:user.attempted})
+})
+
+router.post("/updateresponse", async (req,res)=>{
+
+})
 module.exports = router

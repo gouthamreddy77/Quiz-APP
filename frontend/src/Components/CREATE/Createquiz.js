@@ -1,12 +1,14 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import 'react-responsive-modal/styles.css';
 import { useHistory } from "react-router-dom";
 import Listquestions from './Listquestions';
 import Addquestion from './Addquestion';
 import Showcode from './Showcode';
+import {AuthContext} from '../Home';
 
 const Createquiz = () => {
 
+  const {_id} = useContext(AuthContext)
   const[title,settitle] = useState("");
   const[show,setshow] = useState(false)  //for modal button
   const [questions,setQuestions] = useState([]);
@@ -30,10 +32,22 @@ const Createquiz = () => {
         
         var x = await res.json()
         console.log(x)
+
         if(res.status !== 200 ){
             window.alert("Not Created");
-            history.push("./")
+            history.push("/home")
         }
+
+        await fetch("/user/createdquiz",{
+          method:"POST",
+          headers:{
+            "Content-Type" : "application/json"
+          },
+          body:JSON.stringify({
+            userid:_id,quizid:x.id,quiztitle:title,questions:questions.length
+          })
+        })
+
         setdata(x)
 
     }catch(err){
@@ -93,7 +107,7 @@ const Createquiz = () => {
 
       </div>
 
-      
+    
     </>
     ):(<Showcode id={data.id}/>)
   );

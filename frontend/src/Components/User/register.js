@@ -21,7 +21,9 @@ const Register = () => {
                 })
             })
             const res = await loggedInRes.json()
+
             alert(res.message)
+            if(res.message === 'User Registeration Sucessful')
             history.push("/login")
         }
         catch(err){

@@ -30,7 +30,8 @@ export default function Joinquiz() {
 			})
 			
 			const data = await res.json()
-			if(res.status === 200 && data.message !== "Quiz Not Found"){
+			console.log(data);
+			if(data.message === "Quiz Found"){
 				console.log(data.newquiz[0]);
 				setquiz(data.newquiz[0])
 				setvalid(1);
@@ -65,7 +66,7 @@ export default function Joinquiz() {
 					</div>
 
 				):(
-					(valid===0)?(<Errorpage setvalid={setvalid}/>):(<Displayquiz quiz={quiz}/>)
+					(valid===0)?(<Errorpage setvalid={setvalid}/>):(<Displayquiz quiz={quiz} code={code}/>)
 				)
 			}
 		</>
