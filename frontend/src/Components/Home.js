@@ -1,5 +1,5 @@
 import React,{useState,useEffect,createContext} from 'react'
-import { Route ,Switch} from "react-router-dom";
+import { Route ,Switch } from "react-router-dom";
 import Login from "./User/Login"
 import Register from './User/Register';
 import Home2 from './Home2';
@@ -7,6 +7,7 @@ import Createquiz from './CREATE/Createquiz';
 import Joinquiz from './JOIN/Joinquiz';
 import Dhome from './Dashboard/Dhome'
 import Navbar from "./Navbar"
+import Responses from './Dashboard/Responses';
 export const AuthContext = createContext();
 
 const Home = () => {
@@ -40,6 +41,7 @@ const Home = () => {
             set_id(JSON.parse(persistentdata)._id);}
      }, [loggedIn]);
 
+
     return (
         <>
             <AuthContext.Provider value={{ loggedIn, _id,getLoggedIn ,setuserid }}>   
@@ -66,6 +68,9 @@ const Home = () => {
                                     </Route>
                                     <Route path="/join">
                                         <Joinquiz/>
+                                    </Route>
+                                    <Route path="/responses/:id">
+                                        <Responses/>
                                     </Route>
                                     </>:<h1>loading....</h1>                            
                                 :

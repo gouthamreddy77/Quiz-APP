@@ -1,5 +1,7 @@
 import React,{useState,useContext,useEffect} from 'react'
 import {AuthContext} from '../Home'
+import Attemptedcard from './Attemptedcard'
+import Createdcard from './Createdcard'
 
 const Dhome = () => {
     
@@ -44,23 +46,32 @@ const Dhome = () => {
     
     return (
         <>
-           {_id === undefined || created===[] || attempted===[] ? <>
-            loading<br/>loading<br/>loading<br/>loading<br/>loading<br/>loading<br/>
-           </> : 
-                <div>
-                    Dashboard
-                    <h1>Created:</h1>
-                    <hr/>
-                        <ul>
-                            {created===[] ? null : created.map((code,i) => <li key={i}> Title:{code.quiztitle}  Questions:{code.questions}   Code:{code.quizid}   responses:{code.responses}</li> )}
-                        </ul>
-                    <h1>Attemted:</h1><hr/>
-                        <ul>
-                            {attempted===[] ? null : attempted.map((code,i) => <li key={i}>Title:{code.quiztitle} Questions:{code.questions} Score:{code.score}</li>)}
-                        </ul>
-                </div>
-           }
-            
+                <div className="Dashboard mt-4">
+
+                    <h1 className="middle"><span>Created</span></h1>
+                    <div className="conatiner">
+                        <div className=" a-dashboard  row">
+                            { created.length === 0 ? <h2>You haven't created any</h2> : created.map((code,i) => <Createdcard key={i} quiztitle={code.quiztitle}  questions={code.questions} quizid={code.quizid}  responses={code.responses}/>) }
+                        </div>
+                    </div>
+                
+                    <h1 className="middle"><span>Attempted</span></h1>
+                    <div className="conatiner">
+                        <div className=" a-dashboard  row">
+                            {
+                                attempted.length === 0 ? 
+                    
+                                    <h2>
+                                        You havent Attempted any....
+                                    </h2> 
+                                
+                                : 
+                                
+                                    attempted.map((code,i) => <Attemptedcard  key={i} title={code.quiztitle} questions={code.questions} score={code.score}/> )
+                            }
+                        </div>
+                    </div>
+                </div>        
         </>
     )
 }

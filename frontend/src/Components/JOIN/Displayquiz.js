@@ -1,5 +1,5 @@
-import React, { useState , useContext } from 'react';
-import {useHistory} from 'react-router-dom'
+import React, { useState ,useEffect ,useContext } from 'react';
+import {Link} from 'react-router-dom'
 import {AuthContext} from "../Home"
 
 export default function Displayquiz({quiz,code}) {
@@ -16,9 +16,9 @@ export default function Displayquiz({quiz,code}) {
 	questions=quiz.Questions;
 
 	const {_id} = useContext(AuthContext)
-	const history = useHistory()
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
+	const [updating, setupdating] = useState(0);
 	const [score, setScore] = useState(0);
 
 	const handleAnswerOptionClick = (isCorrect) => {
@@ -34,7 +34,10 @@ export default function Displayquiz({quiz,code}) {
 		}
 	};
 
+useEffect(() => {
+
 	const updateresponse = async ()=>{
+		setupdating(1);
 		console.log("updating...");
 		try{
 
@@ -44,25 +47,23 @@ export default function Displayquiz({quiz,code}) {
 					"Content-Type":"application/json"
 				},
 				body:JSON.stringify({
-					userid:_id,quizid:code,quiztitle:quiz.Title,questions:questions.length,score
+					_id,quizid:code,quiztitle:quiz.Title,questions:questions.length,score
 				})
 			})
-			// await fetch("/user/updateresponse",{
-			// 	method:"POST",
-			// 	headers:{
-			// 		"Content-Type":"application/json"
-			// 	},
-			// 	boody:JSON.stringify({
-			// 		_id,code,score
-			// 	})
-			// })
+			setupdating(2);
+			console.log("addeded to response & attempted");
 		}
 		catch(err){
 			console.log("Not updated");
+			setupdating(0);
 		}
-		history.push("/home")
 	}
 
+	if(showScore === true){
+		updateresponse()
+	}
+	// eslint-disable-next-line
+}, [showScore])
 	return (
 		<div className="Main-container">
 		<div className="quiztitle">
@@ -73,8 +74,17 @@ export default function Displayquiz({quiz,code}) {
 				{showScore ? (
 					<div className='score-section'>
 						<div>You scored {score} out of {questions.length}</div>
-						<div><button className="btn btn-sucess" onClick={updateresponse}>Home</button></div>
-						<div><button className="btn btn-sucess" onClick={updateresponse}>Dashboard</button></div>
+						<div>
+							{
+								updating === 2 ? <h2>updatated</h2> : (
+									updating === 1 ? 
+									<h2>updating...:)</h2>:
+									<h2>Not updated:(!!</h2>
+								)
+							}
+						</div>
+						<div><Link to="/home"><button className="btn btn-sucess"> Home </button></Link></div>
+						<div><Link to="/dashboard"><button className="btn btn-sucess"> Dashboard </button></Link></div>
 					</div>
 				) : (
 					<>
