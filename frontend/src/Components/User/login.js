@@ -1,6 +1,6 @@
 import React,{useState,useContext} from 'react'
 import {Link} from "react-router-dom"
-import { AuthContext } from "../Home"
+import { AuthContext } from "../Pages/Home"
 import {useHistory} from "react-router-dom"
 
 const Login = () => {

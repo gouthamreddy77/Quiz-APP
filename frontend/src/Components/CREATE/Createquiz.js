@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import Listquestions from './Listquestions';
 import Addquestion from './Addquestion';
 import Showcode from './Showcode';
-import {AuthContext} from '../Home';
+import {AuthContext} from '../Pages/Home';
 
 const Createquiz = () => {
 

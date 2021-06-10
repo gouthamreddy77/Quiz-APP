@@ -1,6 +1,6 @@
 import React, { useState ,useEffect ,useContext } from 'react';
 import {Link} from 'react-router-dom'
-import {AuthContext} from "../Home"
+import {AuthContext} from "../Pages/Home"
 
 export default function Displayquiz({quiz,code}) {
 	

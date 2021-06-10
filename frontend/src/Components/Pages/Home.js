@@ -1,13 +1,13 @@
 import React,{useState,useEffect,createContext} from 'react'
 import { Route ,Switch } from "react-router-dom";
-import Login from "./User/Login"
-import Register from './User/Register';
+import Login from "../User/Login"
+import Register from '../User/Register';
 import Home2 from './Home2';
-import Createquiz from './CREATE/Createquiz';
-import Joinquiz from './JOIN/Joinquiz';
-import Dhome from './Dashboard/Dhome'
+import Createquiz from '../CREATE/Createquiz';
+import Joinquiz from '../JOIN/Joinquiz';
+import Dhome from '../Dashboard/Dhome'
 import Navbar from "./Navbar"
-import Responses from './Dashboard/Responses';
+import Responses from '../Dashboard/Responses';
 export const AuthContext = createContext();
 
 const Home = () => {
@@ -84,4 +84,3 @@ const Home = () => {
 }
 
 export default Home
-

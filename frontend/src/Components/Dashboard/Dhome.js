@@ -1,5 +1,5 @@
 import React,{useState,useContext,useEffect} from 'react'
-import {AuthContext} from '../Home'
+import {AuthContext} from '../Pages/Home'
 import Attemptedcard from './Attemptedcard'
 import Createdcard from './Createdcard'
 
