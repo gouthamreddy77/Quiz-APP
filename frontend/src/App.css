@@ -28,7 +28,7 @@
 
 .createquiz{
   padding: 3%;
-  height: max-content;
+  height: 92vh;
 }
 .row{
   padding: 1%;
@@ -100,49 +100,12 @@ padding: 1%;
   display: flex;
   margin-top: 2%;
 }
-.quiz-submit button{
-  border-radius: 10px;
-  background-color: rgb(238, 5, 114);
-  margin: 0 auto;
-}
 
 .disp-question{
   border-bottom: 2px solid black;
 }
 .disp-length{
   border-bottom: 2px solid black;
-}
-
-/* join quiz css*/
-.Join-cointainer{
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.Join-contianer-2{
-  height: 50%;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  padding: 2%;
-}
-
-.Join-contianer-content{
-  width: 55%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.Join-contianer-content h1{
-  text-align: center;
-}
-
-.Join-contianer-content input{
-  height: 50px;
-  border-radius: 1.5px;
 }
 
 /* Error css*/
@@ -256,45 +219,14 @@ padding: 1%;
   height: 50px;
 }
 .react-responsive-modal-modal {
+  margin-top: 2%;
   width: 80%;
-  height: 60%;
+  height: 82%;
 }
 
-.login-container{
-  padding: 2%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.login1{
+.register1 ,.login1 ,.createrow{
   /* border: 2px solid black; */
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
-  width: 40%;
-  height: 60%;
-  padding: 2%;
-}
-.innerlogin1{
-  display: flex;
-  height: 100%;
-  padding: 3%;
-  flex-direction: column;
-  justify-content: space-around;
-  
-}
-.register-container{
-  padding: 2%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.register1{
-  /* border: 2px solid black; */
-  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
-  width: 40%;
-  height: 75%;
-  padding: 2%;
 }
 .innerregister1{
   display: flex;
@@ -328,4 +260,8 @@ padding: 1%;
 .middle span{
   background:#fff; 
     padding:0 10px; 
+}
+
+input{
+  outline: none;
 }

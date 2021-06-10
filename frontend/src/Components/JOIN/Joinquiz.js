@@ -50,20 +50,18 @@ export default function Joinquiz() {
 		<>
 			{
 				(valid === 2)?(
-
-					<div className="conatiner Join-cointainer">
-						<div className="Join-contianer-2 shadow-lg p-3 mb-5 bg-white rounded">
-							<div className="Join-contianer-content">
-								<h1 className="conent-items" >Enter the Code</h1>
-								<input type="text" value={code} onChange={handlecode} className="conent-items"/>
-								
-								<button className="btn btn-primary conent-items"  onClick={fetchquiz}>
-									Join Quiz
-								</button>
+					<>
+					<div className="row d-flex justify-content-center align-items-center" style={{"height":"88vh"}}>
+						<div className="col-sm-12 col-md-5  d-flex flex-column border p-5 justify-content-between login1" style={{"height":"50vh"}}>
+							<h1 style={{"textAlign":"center"}} >Enter the Code</h1>
+							<input type="text" value={code} onChange={handlecode} className="conent-items" style={{"height":"50px","border-radius":"16px","width":"80%","margin-left":"10%","padding-left":"15%"}}/>
 							
-							</div>
+							<button className="btn btn-primary conent-items"  onClick={fetchquiz} style={{"width":"80%","margin-left":"10%"}}>
+								Join Quiz
+							</button>	
 						</div>
 					</div>
+					</>
 
 				):(
 					(valid===0)?(<Errorpage setvalid={setvalid}/>):(<Displayquiz quiz={quiz} code={code}/>)

@@ -27,23 +27,36 @@ import Listoptions from './Listoptions';
     <div>
         <Modal open={open}  center showCloseIcon={false} closeOnOverlayClick={false} closeOnEsc={false}>
 
-          <div className="conatiner border modal-addquestionandoption">
-              <div className="modal-question border">
+          <div className="conatiner border modal-addquestionandoption ">
+              <div className="modal-question ">
                   <h2>Add Question:</h2>
-                  <input type="text" value={question} onChange={(e)=>setQuestion(e.target.value)}></input>
+                  <input type="text" value={question} onChange={(e)=>setQuestion(e.target.value)} style={{"border-radius":"16px","width":"85%","height":"45px"}}></input>
               </div>
 
-              <div className="modal-option">
-                <h3>Add Options:</h3>
-                <Addoption handleoption={handleoption}/>
+              <div className="d-flex flex-column align-items-center justify-content-around ">
+                  <h3>Add Options:</h3>
+                  <div style={{"width":"85%"}}>
+                      <Addoption handleoption={handleoption}/>
+                  </div>
               </div>
-              <div className="modal-option border">
+
+              <div className="modal-option row" style={{"width":"85%","margin-left":"8%"}} >
+                <div className="row" style={{"border-bottom":"2px solid black"}}>
+                    <div className="col" >
+                      <h5>Options:</h5>
+                    </div>
+                    <div className="col" style={{"textAlign":"right"}}>
+                    <h5>Answer:</h5>
+                    </div>
+                </div>
+                  <div className="pl-4 col">
                       {
                         options.map( item => (<Listoptions key={item.id} item={item.option} istrue={item.istrue}></Listoptions>) )
                       }
+                  </div>
               </div>
 
-              <div className="border model-buttons">
+              <div className="d-flex justify-content-around">
                   <button onClick={() => CloseModal()} className="btn btn-success btn-lg">CLOSE</button>
                   <button onClick={() => handlesubmitquestion()} className="btn btn-success btn-lg">SUBMIT</button>
               </div>

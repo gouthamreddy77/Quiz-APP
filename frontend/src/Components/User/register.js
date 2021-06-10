@@ -33,19 +33,19 @@ const Register = () => {
     }
     return (
         <>
-            <div className="register-container border">
-                <div className="conatiner register1 ">
-                    <div className="innerregister1 border">
-                        <h1>Create New Account</h1>
-                        <label>Email:</label>
-                        <input type="text" value={email} onChange={(e)=> setemail(e.target.value)}></input>
-                        <label>Password:</label>
-                        <input type="text" value={password} onChange={(e)=> setpassword(e.target.value)}></input>
-                        <label>Verify Password:</label>
-                        <input type="text" value={passwordVerify} onChange={(e)=> setpasswordVerify(e.target.value)}></input>
-                        <button className="btn btn-primary" onClick={register}>Register</button>
-                        <Link to='/login'>Have an account?Log in</Link>
-                    </div>
+            <div className="row d-flex justify-content-center align-items-center" style={{"height":"100vh"}}>
+                <div className="col-sm-12 col-md-5  d-flex flex-column border p-5 justify-content-between register1" style={{"height":"60vh"}}>
+
+                    <h1 style={{"textAlign":"center"}}>Create New Account</h1>
+                    <label>Email:</label>
+                    <input type="text" value={email} onChange={(e)=> setemail(e.target.value)}></input>
+                    <label>Password:</label>
+                    <input type="text" value={password} onChange={(e)=> setpassword(e.target.value)}></input>
+                    <label>Verify Password:</label>
+                    <input type="text" value={passwordVerify} onChange={(e)=> setpasswordVerify(e.target.value)}></input>
+                    <button className="btn btn-primary" onClick={register}>Register</button>
+                    <Link to='/login'>Have an account?Log in</Link>
+        
                 </div>
             </div> 
         </>

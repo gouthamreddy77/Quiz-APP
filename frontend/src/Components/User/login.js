@@ -38,19 +38,17 @@ const Login = () => {
     }
     return (
         <>
-            <div className="login-container border">
-                <div className="conatiner login1 ">
-                    <div className="innerlogin1 border">
-                        <h1>Login to your Account</h1>
+            <div className="row d-flex justify-content-center align-items-center" style={{"height":"100vh"}}>
+                <div className="col-sm-12 col-md-5  d-flex flex-column border p-5 justify-content-between login1" style={{"height":"60vh"}}>
+                        <h1 style={{"textAlign":"center"}}>Login to your Account</h1>
                         <label>Email:</label>
                         <input type="text" value={email} onChange={(e)=> setemail(e.target.value)}></input>
                         <label>Password:</label>
                         <input type="password" value={password} onChange={(e)=> setpassword(e.target.value)}></input>
                         <button className="btn btn-primary" onClick={login}>Login</button>
                         <Link to="/">New Here? Register</Link>
-                    </div>
                 </div>
-            </div> 
+            </div>
         </>
     )
 }

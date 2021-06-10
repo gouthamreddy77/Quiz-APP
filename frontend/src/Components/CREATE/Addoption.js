@@ -20,13 +20,13 @@ const Addoption = ({handleoption}) => {
         setoption({option:"",istrue:false})
         console.log("option- " + option.option + "   istrue- " + option.istrue);
     }
-
+    
     return (
-        <div>
-            <form  className="form-container" onSubmit={submitoption}>
-              <input type="checkbox" checked={option.istrue} name="checked" onChange={handlestate}/>
-              <input type="text"  name="option" value={option.option} onChange={handlestate} />
-              <button >Add</button>
+        <div >
+            <form  className=" d-flex justify-content-between" onSubmit={submitoption}>
+              <input type="checkbox" checked={option.istrue} name="checked" onChange={handlestate} className="checkbox" style={{"width":"25px","height":"45px"}}/>
+              <input type="text"  name="option" value={option.option} onChange={handlestate} style={{"border-radius":"16px","width":"80%","height":"45px"}}/>
+              <button >Add Option</button>
             </form>
         </div>
     )

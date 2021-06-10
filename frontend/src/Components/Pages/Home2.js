@@ -3,24 +3,24 @@ import {Link} from 'react-router-dom'
 const Home2 = () => {
     return (
         <>
-            <div className="Home2">
-                        <div className="conatiner   d-flex Home2-container">
-                            <div className="conatiner conatiner-left " >
-                                <div><Link to="/dashboard">  <button className="btn btn-success">Dashboard</button> </Link></div>  
-                                <div><Link to="/create">  <button className="btn btn-success">Createquiz</button> </Link></div>
-                                <div><Link to="/join">  <button className="btn btn-success">JoinQuiz</button>   </Link></div>
-                            </div>
-                            <div className="conatiner conatiner-right p-5 " >
-                                <div>
-                                    <h5>Created by</h5>
-                                    <h1>GOUTHAM REDDY <br/>LYAGALA</h1>
-                                    <h2>Users can able to<br/> 
-                                    Create and Join the Quiz<br/>
-                                    and also able to view the Responses</h2>
-                                </div>
-                            </div>
-                        </div>
+            <div className="row">
+                <div className="col-sm-12 col-md-6  d-flex justify-content-around flex-column" style={{"height":"87vh","padding-left":"17%"}}>
+                    <div className="d-flex justify-content-around flex-column  align-items-start" style={{"height":"35vh"}}>
+                        <div><Link to="/dashboard">  <button className="btn btn-success">Dashboard</button> </Link></div>  
+                        <div><Link to="/create">  <button className="btn btn-success">Createquiz</button> </Link></div>
+                        <div><Link to="/join">  <button className="btn btn-success">JoinQuiz</button>   </Link></div>
                     </div>
+                </div>
+                <div className="col-sm-12 col-md-6  d-flex justify-content-around flex-column  align-items-center" >
+                    <div  style={{"margin-bottom":"5%","width":"50%"}}>
+                        <h5>Created by</h5>
+                        <h1>GOUTHAM REDDY LYAGALA</h1>
+                        <h3>Users can able to
+                        Create and Join the Quiz
+                        and also able to view the Responses</h3>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

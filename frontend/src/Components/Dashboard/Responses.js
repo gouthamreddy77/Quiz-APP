@@ -55,27 +55,27 @@ const Responses = () => {
                                 <h1 style={{"textAlign":"center"}} className="mb-4">Responses</h1>
                                 <div className="row">
                                     <div className="col">
-                                            <h1>No</h1>
+                                            <h2>No</h2>
                                     </div>
                                     <div className="col">
-                                        <h1>Email</h1>
+                                        <h2>Email</h2>
                                     </div>
                                     <div className="col">
-                                        <h1>Score</h1>
+                                        <h2>Score</h2>
                                     </div>
                                 </div>
                                 {
                                     users.map( (user,i) =>
 
                                         <div className="row" key={i}>
-                                                <div  className="col border-bottom border-top">
-                                                       <h1>{i+1}</h1>
+                                                <div  className="col ">
+                                                       <h3>{i+1}</h3>
                                                 </div>
-                                                <div  className="col border-bottom border-top">
-                                                    <h1>{user.email} </h1>
+                                                <div  className="col ">
+                                                    <h3>{user.email} </h3>
                                                 </div>
-                                                <div  className="col border-bottom border-top">
-                                                    <h1>{user.score}</h1>
+                                                <div  className="col ">
+                                                    <h3>{user.score}</h3>
                                                 </div>
                                         </div>
                                      
