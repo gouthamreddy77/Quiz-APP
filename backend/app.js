@@ -8,10 +8,7 @@ var app = express();
 dotenv.config()
 app.use(express.json()) // body parser
 app.use(cookieparser())
-app.use(cors({
-    origin: ["http://lochalhost:3000"],
-    credentials:true
-}))
+app.use(cors())
 
 require('./db/conn')     // connection to db
 app.use("/user",require("./routes/userrouting"))
