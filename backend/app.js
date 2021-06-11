@@ -18,5 +18,5 @@ app.use("/user",require("./routes/userrouting"))
 app.use("/customer",require("./routes/customerrouting"))
 app.use("/data",require('./routes/datarouting')) // server router
 
-const port = process.env.port || 5000
-app.listen(port,() => console.log(`server is listening at ${5000}`) ) //server
+const port = process.env.PORT || 5000
+app.listen(port,'0.0.0.0',() => console.log(`server is listening at ${port}`) ) //server
