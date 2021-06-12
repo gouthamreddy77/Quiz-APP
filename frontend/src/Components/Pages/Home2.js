@@ -12,7 +12,7 @@ const Home2 = () => {
                     </div>
                 </div>
                 <div className="col-sm-12 col-md-6  d-flex justify-content-around flex-column  align-items-center" >
-                    <div  style={{"margin-bottom":"5%","width":"50%"}}>
+                    <div  style={{"marginBottom":"5%","width":"50%"}}>
                         <h5>Created by</h5>
                         <h1>GOUTHAM REDDY LYAGALA</h1>
                         <h3>Users can able to

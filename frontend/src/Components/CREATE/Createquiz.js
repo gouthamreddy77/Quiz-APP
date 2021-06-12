@@ -73,12 +73,12 @@ const Createquiz = () => {
     (data.id === "" )?(
     <>
       <div >
-        <div className="conatiner   d-flex flex-column justify-content-center "  style={{"margin":"2%","margin-top":"2%"}}>
+        <div className="conatiner   d-flex flex-column justify-content-center "  style={{"margin":"2%","marginTop":"2%"}}>
             <div className="row border bg-white mt-3 mb-4 shadow-lg  rounded-3 createrow" >
                 
                 <div className="col-12  d-flex flex-column justify-content-center ">
                   <h2 className="mb-3">Quiz title</h2>
-                  <input type="text" value={title} className="input-text" onChange={e => addtitle(e.target.value)} style={{"width":"50%","margin-left":"25%","border-radius":"16px","padding-left":"5%"}}></input>
+                  <input type="text" value={title} className="input-text" onChange={e => addtitle(e.target.value)} style={{"width":"50%","marginLeft":"25%","border-radius":"16px","padding-left":"5%"}}></input>
                 </div>
 
                 <div className="col-12  add-question">
@@ -101,7 +101,7 @@ const Createquiz = () => {
                 </div>
 
                 <div className="col-12  d-flex justify-content-center">
-                      <button className="btn btn-sm" onClick={onsubmit} style={{"background-color":"rgb(238, 5, 114)","height":"55px","width":"120px","border-radius":"10px"}}>Create Quiz</button>
+                      <button className="btn btn-sm" onClick={onsubmit} style={{"backgroundColor":"rgb(238, 5, 114)","height":"55px","width":"120px","borderRadius":"10px"}}>Create Quiz</button>
                 </div>
 
             </div>
