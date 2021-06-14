@@ -8,7 +8,7 @@ const Dhome = () => {
     const{_id} = useContext(AuthContext)
     const [created,setcreated] = useState([])
     const [attempted,setattempted] = useState([])
-
+    const [loading,setloading] = useState(true)
     
     useEffect(() => {
 
@@ -30,6 +30,7 @@ const Dhome = () => {
                          alert(data.message)
                          return
                      }
+                setloading(false);
                 setcreated(data.created)
                 setattempted(data.attempted) 
             }
@@ -46,7 +47,18 @@ const Dhome = () => {
     
     return (
         <>
-                <div className="Dashboard mt-4">
+            {   
+                loading === true ? 
+                <>
+                    <div class="d-flex justify-content-center m-5">
+                        <h1>Loading...</h1>
+                        <div class="spinner-border m-3" role="status">
+                            <span class="sr-only "></span>
+                        </div>
+                    </div>
+                </> : 
+                <>
+                    <div className="Dashboard mt-5 mx-5">
 
                     <h1 className="middle"><span>Created</span></h1>
                     <div className="conatiner">
@@ -54,13 +66,13 @@ const Dhome = () => {
                             { created.length === 0 ? <h2>You haven't created any</h2> : created.map((code,i) => <Createdcard key={i} quiztitle={code.quiztitle}  questions={code.questions} quizid={code.quizid}  responses={code.responses}/>) }
                         </div>
                     </div>
-                
+
                     <h1 className="middle"><span>Attempted</span></h1>
                     <div className="conatiner">
                         <div className=" a-dashboard  row">
                             {
                                 attempted.length === 0 ? 
-                    
+
                                     <h2>
                                         You havent Attempted any....
                                     </h2> 
@@ -71,7 +83,10 @@ const Dhome = () => {
                             }
                         </div>
                     </div>
-                </div>        
+                    </div>
+                </>
+            }
+                        
         </>
     )
 }

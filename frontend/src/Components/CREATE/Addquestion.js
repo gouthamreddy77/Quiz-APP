@@ -57,8 +57,8 @@ import Listoptions from './Listoptions';
               </div>
 
               <div className="d-flex justify-content-around">
-                  <button onClick={() => CloseModal()} className="btn btn-success btn-lg">CLOSE</button>
-                  <button onClick={() => handlesubmitquestion()} className="btn btn-success btn-lg">SUBMIT</button>
+                  <button onClick={() => CloseModal()} className="btn btn-success btn-lg d-button" style={{"width":"180px"}}>CLOSE</button>
+                  <button onClick={() => handlesubmitquestion()} className="btn btn-success btn-lg d-button" style={{"width":"180px"}}>SUBMIT</button>
               </div>
           </div>
 

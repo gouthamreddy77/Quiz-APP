@@ -73,22 +73,22 @@ const Createquiz = () => {
     (data.id === "" )?(
     <>
       <div >
-        <div className="conatiner   d-flex flex-column justify-content-center "  style={{"margin":"2%","marginTop":"2%"}}>
-            <div className="row border bg-white mt-3 mb-4 shadow-lg  rounded-3 createrow" >
+        <div className="conatiner   d-flex flex-column justify-content-center "  style={{"margin":"2%","marginBottom":"0%","padding":"2%"}}>
+            <div className="row border bg-white mt-3 mb-4 shadow-lg  rounded-3 createrow " sytle={{"width":"1%"}}>
                 
-                <div className="col-12  d-flex flex-column justify-content-center ">
+                <div className="col-12  d-flex flex-column justify-content-center mb-2">
                   <h2 className="mb-3">Quiz title</h2>
                   <input type="text" value={title} className="input-text" onChange={e => addtitle(e.target.value)} style={{"width":"50%","marginLeft":"25%","border-radius":"16px","padding-left":"5%"}}></input>
                 </div>
 
                 <div className="col-12  add-question">
-                    <button onClick={() => buttontrigger(true)} className="btn btn-info" >ADD question</button>
+                    <button onClick={() => buttontrigger(true)} className="d-button" style={{"width":"150px","border-radius":"26px","height":"45px"}}>ADD QUESTION</button>
                     {show ? (<Addquestion show={buttontrigger} handlequestion={addquestions} /> ) : null}
                 </div>
 
-                <div className="col-12  display-questions">
+                <div className="col-12  display-questions mb-1">
                     <h2>Questions:</h2>
-                    <div className="List">
+                    <div className="List p-3">
                       {
                           questions.map(
                             item => (
@@ -101,7 +101,7 @@ const Createquiz = () => {
                 </div>
 
                 <div className="col-12  d-flex justify-content-center">
-                      <button className="btn btn-sm" onClick={onsubmit} style={{"backgroundColor":"rgb(238, 5, 114)","height":"55px","width":"120px","borderRadius":"10px"}}>Create Quiz</button>
+                      <button className="d-button" onClick={onsubmit} style={{"width":"150px","border-radius":"26px","height":"55px"}}>CREATE QUIZ</button>
                 </div>
 
             </div>

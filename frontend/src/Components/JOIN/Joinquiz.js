@@ -56,7 +56,7 @@ export default function Joinquiz() {
 							<h1 style={{"textAlign":"center"}} >Enter the Code</h1>
 							<input type="text" value={code} onChange={handlecode} className="conent-items" style={{"height":"50px","border-radius":"16px","width":"80%","margin-left":"10%","padding-left":"15%"}}/>
 							
-							<button className="btn btn-primary conent-items"  onClick={fetchquiz} style={{"width":"80%","margin-left":"10%"}}>
+							<button className="btn btn-primary conent-items d-button"  onClick={fetchquiz} style={{"width":"80%","margin-left":"10%"}}>
 								Join Quiz
 							</button>	
 						</div>

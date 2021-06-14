@@ -45,7 +45,14 @@ const Responses = () => {
         <>
             {
                 loading === 1 ? 
-                    <h1>Loading.........</h1> 
+                    <>
+                        <div class="d-flex justify-content-center m-5">
+                            <h1>Loading...</h1>
+                            <div class="spinner-border m-3" role="status">
+                                <span class="sr-only "></span>
+                            </div>
+                        </div>
+                    </> 
                 :
                     loading === 2 ? 
                         <h1>Not found</h1> 

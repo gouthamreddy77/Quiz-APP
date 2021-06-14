@@ -219,9 +219,10 @@ padding: 1%;
   height: 50px;
 }
 .react-responsive-modal-modal {
-  margin-top: 2%;
+  margin-top: 8%;
   width: 80%;
-  height: 82%;
+  height: 80%;
+  border-radius: 20px;
 }
 
 .register1 ,.login1 ,.createrow{
@@ -264,4 +265,21 @@ padding: 1%;
 
 input{
   outline: none;
+}
+
+.home{
+  background-color: #23395b;
+}
+
+.d-button {
+  width: 206px;
+  border-radius: 50px;
+  background-image: linear-gradient(90deg,#23395b -10%,#d81e5b 30%,#f7c550);
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+.navbar{
+  background-color: #23395b;
 }
