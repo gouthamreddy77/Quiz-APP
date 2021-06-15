@@ -46,10 +46,10 @@ const Responses = () => {
             {
                 loading === 1 ? 
                     <>
-                        <div class="d-flex justify-content-center m-5">
+                        <div className="d-flex justify-content-center m-5">
                             <h1>Loading...</h1>
-                            <div class="spinner-border m-3" role="status">
-                                <span class="sr-only "></span>
+                            <div className="spinner-border m-3" role="status">
+                                <span className="sr-only "></span>
                             </div>
                         </div>
                     </> 
@@ -58,36 +58,43 @@ const Responses = () => {
                         <h1>Not found</h1> 
                     :
                         <>  
-                            <div className="conatiner bg-light" style={{"background-color":"#F8EFBA","height":"92vh"}}>
+                            <div className="conatiner bg-white border p-4" style={{"backgroundColor":"#F8EFBA","height":"88vh"}}>
                                 <h1 style={{"textAlign":"center"}} className="mb-4">Responses</h1>
-                                <div className="row">
-                                    <div className="col">
-                                            <h2>No</h2>
+                                <div className="row mx-3 text-white text-center shadow-lg" style={{"backgroundColor":"#d81e5b","borderTopRightRadius":"10px","borderTopLeftRadius":"10px"}}>
+                                    <div className="col col-sm-3 center">
+                                            <h5>No</h5>
                                     </div>
-                                    <div className="col">
-                                        <h2>Email</h2>
+                                    <div className="col col-sm-3">
+                                            <h5>Name</h5>
                                     </div>
-                                    <div className="col">
-                                        <h2>Score</h2>
+                                    <div className="col col-sm-3">
+                                        <h5>Email</h5>
+                                    </div>
+                                    <div className="col col-sm-3">
+                                        <h5>Score</h5>
                                     </div>
                                 </div>
-                                {
-                                    users.map( (user,i) =>
+                                <div className=" mx-3 shadow-lg bg-light" style={{"borderBottomRightRadius":"10px","borderBottomLeftRadius":"10px"}}>
+                                    {
+                                        users.map( (user,i) =>
 
-                                        <div className="row" key={i}>
-                                                <div  className="col ">
-                                                       <h3>{i+1}</h3>
-                                                </div>
-                                                <div  className="col ">
-                                                    <h3>{user.email} </h3>
-                                                </div>
-                                                <div  className="col ">
-                                                    <h3>{user.score}</h3>
-                                                </div>
-                                        </div>
-                                     
-                                    )
-                                }
+                                                <div className="row mx-3 text-center border-bottom" key={i} >
+                                                        <div  className="col col-sm-3" >
+                                                            <h5>{i+1}</h5>
+                                                        </div>
+                                                        <div  className="col col-sm-3">
+                                                            <h5>{user.email.split('@')[0]} </h5>
+                                                        </div>
+                                                        <div  className="col col-sm-3">
+                                                            <h5>{user.email} </h5>
+                                                        </div>
+                                                        <div  className="col col-sm-3">
+                                                            <h5>{user.score}</h5>
+                                                        </div>
+                                                </div>        
+                                        )
+                                    }
+                                </div>
                             </div>
                                 
                         </>

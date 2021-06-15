@@ -50,15 +50,15 @@ const Dhome = () => {
             {   
                 loading === true ? 
                 <>
-                    <div class="d-flex justify-content-center m-5">
+                    <div className="d-flex justify-content-center m-5">
                         <h1>Loading...</h1>
-                        <div class="spinner-border m-3" role="status">
-                            <span class="sr-only "></span>
+                        <div className="spinner-border m-3" role="status">
+                            <span className="sr-only "></span>
                         </div>
                     </div>
                 </> : 
                 <>
-                    <div className="Dashboard mt-5 mx-5">
+                    <div className="Dashboard mt-5 px-4">
 
                     <h1 className="middle"><span>Created</span></h1>
                     <div className="conatiner">

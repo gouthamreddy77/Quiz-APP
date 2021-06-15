@@ -25,7 +25,7 @@ const Addoption = ({handleoption}) => {
         <div >
             <form  className=" d-flex justify-content-between" onSubmit={submitoption}>
               <input type="checkbox" checked={option.istrue} name="checked" onChange={handlestate} className="checkbox" style={{"width":"29px","height":"45px"}}/>
-              <input type="text"  name="option" value={option.option} onChange={handlestate} style={{"border-radius":"16px","width":"99%","height":"45px"}}/>
+              <input type="text"  name="option" value={option.option} onChange={handlestate} style={{"borderRadius":"16px","width":"99%","height":"45px"}}/>
               <button className="d-button"  syle={{"width":"0px"}}>Add Option</button>
             </form>
         </div>

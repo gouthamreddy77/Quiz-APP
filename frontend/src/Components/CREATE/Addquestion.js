@@ -30,7 +30,7 @@ import Listoptions from './Listoptions';
           <div className="conatiner border modal-addquestionandoption ">
               <div className="modal-question ">
                   <h2>Add Question:</h2>
-                  <input type="text" value={question} onChange={(e)=>setQuestion(e.target.value)} style={{"border-radius":"16px","width":"85%","height":"45px"}}></input>
+                  <input type="text" value={question} onChange={(e)=>setQuestion(e.target.value)} style={{"borderRadius":"16px","width":"85%","height":"45px"}}></input>
               </div>
 
               <div className="d-flex flex-column align-items-center justify-content-around ">
@@ -40,8 +40,8 @@ import Listoptions from './Listoptions';
                   </div>
               </div>
 
-              <div className="modal-option row" style={{"width":"85%","margin-left":"8%"}} >
-                <div className="row" style={{"border-bottom":"2px solid black"}}>
+              <div className="modal-option row" style={{"width":"85%","marginLeft":"8%"}} >
+                <div className="row" style={{"borderBottom":"2px solid black"}}>
                     <div className="col" >
                       <h5>Options:</h5>
                     </div>

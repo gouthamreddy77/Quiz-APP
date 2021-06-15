@@ -79,10 +79,10 @@ useEffect(() => {
 								updating === 2 ? <h2>updatated</h2> : (
 									updating === 1 ? 
 									<>
-										<div class="d-flex justify-content-center ">
+										<div className="d-flex justify-content-center ">
 											<h2>Updating...</h2>
-											<div class="spinner-border m-3" role="status">
-												<span class="sr-only "></span>
+											<div className="spinner-border m-3" role="status">
+												<span className="sr-only "></span>
 											</div>
 										</div>
 									</>

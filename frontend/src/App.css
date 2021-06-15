@@ -283,3 +283,10 @@ input{
 .navbar{
   background-color: #23395b;
 }
+
+.menu{
+  width: 35px;
+  height: 4px;
+  background-color: white;
+  margin: 6px 0;
+}

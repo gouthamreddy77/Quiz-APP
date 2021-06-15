@@ -14,6 +14,7 @@ const Home = () => {
 
     const [loggedIn, setLoggedIn] = useState(undefined);
     const [_id,set_id] = useState()
+    const [email,setemail] =useState("")
 
     async function getLoggedIn() {
         const loggedInRes = await fetch("/user/loggedIn",{
@@ -25,7 +26,10 @@ const Home = () => {
 
     function setuserid( id ){
         set_id(id)
-        
+    }
+
+    const setuseremail = (x) => {
+        setemail(x);
     }
 
     useEffect(() => {
@@ -35,16 +39,20 @@ const Home = () => {
     
       useEffect(() => {
         const persistentdata = localStorage.getItem('user-id')
+        const data = localStorage.getItem('email-id')
         console.log("persistent",persistentdata);
         if(loggedIn === true && persistentdata !== null)
-           { console.log("2nd useeffect");
-            set_id(JSON.parse(persistentdata)._id);}
+        { 
+            console.log("2nd useeffect");
+            set_id(JSON.parse(persistentdata)._id);
+            setemail(JSON.parse(data).email);
+        }
      }, [loggedIn]);
 
 
     return (
         <>
-            <AuthContext.Provider value={{ loggedIn, _id,getLoggedIn ,setuserid }}>   
+            <AuthContext.Provider value={{ loggedIn, _id,getLoggedIn ,setuserid ,setuseremail}}>   
                         <Switch>
                             <Route exact path="/">
                                 <Register/>
@@ -56,7 +64,7 @@ const Home = () => {
                                 loggedIn === true ?                           
                                     _id !==""?
                                     <>
-                                    <Navbar/>
+                                    <Navbar email={email}/>
                                     <Route path="/home">
                                         <Home2/>
                                     </Route>

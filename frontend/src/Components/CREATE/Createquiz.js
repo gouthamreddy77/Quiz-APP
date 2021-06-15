@@ -78,11 +78,11 @@ const Createquiz = () => {
                 
                 <div className="col-12  d-flex flex-column justify-content-center mb-2">
                   <h2 className="mb-3">Quiz title</h2>
-                  <input type="text" value={title} className="input-text" onChange={e => addtitle(e.target.value)} style={{"width":"50%","marginLeft":"25%","border-radius":"16px","padding-left":"5%"}}></input>
+                  <input type="text" value={title} className="input-text" onChange={e => addtitle(e.target.value)} style={{"width":"50%","marginLeft":"25%","borderRadius":"16px","paddingLeft":"5%"}}></input>
                 </div>
 
                 <div className="col-12  add-question">
-                    <button onClick={() => buttontrigger(true)} className="d-button" style={{"width":"150px","border-radius":"26px","height":"45px"}}>ADD QUESTION</button>
+                    <button onClick={() => buttontrigger(true)} className="d-button" style={{"width":"150px","borderRadius":"26px","height":"45px"}}>ADD QUESTION</button>
                     {show ? (<Addquestion show={buttontrigger} handlequestion={addquestions} /> ) : null}
                 </div>
 
@@ -101,7 +101,7 @@ const Createquiz = () => {
                 </div>
 
                 <div className="col-12  d-flex justify-content-center">
-                      <button className="d-button" onClick={onsubmit} style={{"width":"150px","border-radius":"26px","height":"55px"}}>CREATE QUIZ</button>
+                      <button className="d-button" onClick={onsubmit} style={{"width":"150px","borderRadius":"26px","height":"55px"}}>CREATE QUIZ</button>
                 </div>
 
             </div>
