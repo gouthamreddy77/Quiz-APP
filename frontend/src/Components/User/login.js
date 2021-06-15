@@ -57,17 +57,6 @@ const Login = () => {
                     </div>
             </> :
                 <>
-                    {/* <div className="row d-flex justify-content-center align-items-center" style={{"height":"100vh"}}>
-                        <div className="col-sm-12 col-md-11 col-lg-6   d-flex flex-column border p-5 justify-content-between login1" style={{"height":"67vh"}}>
-                                <h1 style={{"textAlign":"center"}}>Login to your Account</h1>
-                                <label>Email:</label>
-                                <input type="email" value={email} onChange={(e)=> setemail(e.target.value)}></input>
-                                <label>Password:</label>
-                                <input type="password" value={password} onChange={(e)=> setpassword(e.target.value)}></input>
-                                <button className="btn btn-primary" onClick={login}>Login</button>
-                                <Link to="/">New Here? Register</Link>
-                        </div>
-                    </div> */}
                     <div>
                         <div className="row" style={{"marginTop":"5%","marginLeft":"9%","marginRight":"5%","height":"83vh"}}>
                         
