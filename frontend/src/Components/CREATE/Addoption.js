@@ -16,6 +16,9 @@ const Addoption = ({handleoption}) => {
 
     const submitoption = (e) =>{
         e.preventDefault();
+        if(option.option.trim() === ""){
+            return;
+        }
         handleoption(option);
         setoption({option:"",istrue:false})
         console.log("option- " + option.option + "   istrue- " + option.istrue);

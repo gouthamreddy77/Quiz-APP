@@ -58,7 +58,7 @@ const Dhome = () => {
                     </div>
                 </> : 
                 <>
-                    <div className="Dashboard mt-5 px-4">
+                    <div className="Dashboard mt-5">
 
                     <h1 className="middle"><span>Created</span></h1>
                     <div className="conatiner">

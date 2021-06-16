@@ -24,8 +24,10 @@ const Register = () => {
             })
             const res = await loggedInRes.json()
 
-            if(res.message === 'User Registeration Sucessful')
+            if(res.message === 'User Registeration Sucessful'){ 
+                alert("Registeration Sucessful")
                 history.push("/login")
+            }
             else{
                 setloading(false)
                 alert(res.message)
@@ -34,7 +36,7 @@ const Register = () => {
         catch(err){
             console.log(err);
             setloading(false)
-            alert("Login Not Sucessful")
+            alert("Register Not Sucessful")
         }
     }
 

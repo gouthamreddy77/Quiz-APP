@@ -17,6 +17,14 @@ const Createquiz = () => {
 
   const onsubmit = async (e) =>{
     e.preventDefault();
+    if(title===""){
+      alert("Quiz title Should Not be Empty")
+      return
+    }
+    if(questions.length == 0 ){
+      alert("Add Atleat one Question")
+      return
+    }
     console.log("sample 1st ques: ",questions[0].question);
     try{
         const res = await fetch("/data/post",{

@@ -58,37 +58,37 @@ const Responses = () => {
                         <h1>Not found</h1> 
                     :
                         <>  
-                            <div className="conatiner bg-white border p-4" style={{"backgroundColor":"#F8EFBA","height":"88vh"}}>
+                            <div className="conatiner bg-white  p-lg-4" style={{"backgroundColor":"#F8EFBA","height":"88vh"}}>
                                 <h1 style={{"textAlign":"center"}} className="mb-4">Responses</h1>
-                                <div className="row mx-3 text-white text-center shadow-lg" style={{"backgroundColor":"#d81e5b","borderTopRightRadius":"10px","borderTopLeftRadius":"10px"}}>
-                                    <div className="col col-sm-3 center">
+                                <div className="row  text-white text-center shadow-lg mx-lg-5" style={{"backgroundColor":"#d81e5b","borderTopRightRadius":"10px","borderTopLeftRadius":"10px"}}>
+                                    <div className="col col-sm-1 col-lg-3 center">
                                             <h5>No</h5>
                                     </div>
-                                    <div className="col col-sm-3">
+                                    <div className="col col-sm-5 col-lg-3">
                                             <h5>Name</h5>
                                     </div>
-                                    <div className="col col-sm-3">
+                                    <div className="col col-sm-5 col-lg-3">
                                         <h5>Email</h5>
                                     </div>
-                                    <div className="col col-sm-3">
+                                    <div className="col col-sm-1 col-lg-3">
                                         <h5>Score</h5>
                                     </div>
                                 </div>
-                                <div className=" mx-3 shadow-lg bg-light" style={{"borderBottomRightRadius":"10px","borderBottomLeftRadius":"10px"}}>
+                                <div className="shadow-lg bg-light mx-lg-5" style={{"borderBottomRightRadius":"10px","borderBottomLeftRadius":"10px"}}>
                                     {
                                         users.map( (user,i) =>
 
                                                 <div className="row mx-3 text-center border-bottom" key={i} >
-                                                        <div  className="col col-sm-3" >
+                                                        <div  className="col col-sm-1 col-lg-3" >
                                                             <h5>{i+1}</h5>
                                                         </div>
-                                                        <div  className="col col-sm-3">
+                                                        <div  className="col col-sm-5 col-lg-3">
                                                             <h5>{user.email.split('@')[0]} </h5>
                                                         </div>
-                                                        <div  className="col col-sm-3">
+                                                        <div  className="col col-sm-5 col-lg-3">
                                                             <h5>{user.email} </h5>
                                                         </div>
-                                                        <div  className="col col-sm-3">
+                                                        <div  className="col col-sm-1 col-lg-3">
                                                             <h5>{user.score}</h5>
                                                         </div>
                                                 </div>        

@@ -19,6 +19,15 @@ import Listoptions from './Listoptions';
     setOptions([...options,{id:`${options.length}`,option:x.option,istrue:x.istrue}])
   }
   const handlesubmitquestion = () =>{
+    if(question === ""){
+      alert("Question Should Not be Empty")
+      return;
+    }
+
+    if(options.length < 2){
+      alert("Add Atleast two Options")
+      return;
+    }
     handlequestion(question,options)
     CloseModal(false)
   }
