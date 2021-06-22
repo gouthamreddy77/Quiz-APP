@@ -76,7 +76,7 @@ useEffect(() => {
 						<div>You scored {score} out of {questions.length}</div>
 						<div>
 							{
-								updating === 2 ? <h2>updatated</h2> : (
+								updating === 2 ? <h2>Updatated</h2> : (
 									updating === 1 ? 
 									<>
 										<div className="d-flex justify-content-center ">

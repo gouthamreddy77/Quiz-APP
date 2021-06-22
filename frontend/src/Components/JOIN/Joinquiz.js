@@ -53,7 +53,7 @@ export default function Joinquiz() {
 					<>
 					<div className="row d-flex justify-content-center align-items-center" style={{"height":"88vh"}}>
 						<div className="col-sm-12 col-md-5  d-flex flex-column border p-5 justify-content-between login1" style={{"height":"50vh"}}>
-							<h1 style={{"textAlign":"center"}} >Enter the Code</h1>
+							<h1 className="text-center fs-1 fw-bold" >Enter the Code</h1>
 							<input type="text" value={code} onChange={handlecode} className="conent-items" style={{"height":"50px","borderRadius":"16px","width":"80%","marginLeft":"10%","paddingLeft":"15%"}}/>
 							
 							<button className="btn btn-primary conent-items d-button"  onClick={fetchquiz} style={{"width":"80%","marginLeft":"10%"}}>

@@ -11,7 +11,7 @@ const Createquiz = () => {
   const {_id} = useContext(AuthContext)
   const[title,settitle] = useState("");
   const[show,setshow] = useState(false)  //for modal button
-  const [questions,setQuestions] = useState([]);
+  var [questions,setQuestions] = useState([]);
   let history = useHistory()
   const[data,setdata] = useState({id:""})
 
@@ -21,7 +21,7 @@ const Createquiz = () => {
       alert("Quiz title Should Not be Empty")
       return
     }
-    if(questions.length == 0 ){
+    if(questions.length === 0 ){
       alert("Add Atleat one Question")
       return
     }
@@ -69,6 +69,7 @@ const Createquiz = () => {
   
   const buttontrigger = (x)  => setshow(x)
   const addtitle      = (x)  =>  settitle(x)
+  
   const addquestions   = (x,y)  =>  {
     var obj={};
     obj.id = questions.length
@@ -77,45 +78,64 @@ const Createquiz = () => {
     setQuestions([...questions,obj])
   }
 
+  const editquestion = (ind,x,y) =>{
+    questions[ind].question = x;
+    questions[ind].options = y;
+    setQuestions(questions);
+  }
+
+  const deletequestion = (ind) =>{
+    questions = questions.filter( (item,index)=>{
+      return (index !== ind);
+    })
+    setQuestions(questions);
+  }
+
   return (
     (data.id === "" )?(
     <>
-      <div >
-        <div className="conatiner   d-flex flex-column justify-content-center "  style={{"margin":"2%","marginBottom":"0%","padding":"2%"}}>
-            <div className="row border bg-white mt-3 mb-4 shadow-lg  rounded-3 createrow " sytle={{"width":"1%"}}>
+      <div className=" p-sm-1 px-md-5 mx-lg-5 pb-1 " >
+            <div className="d-flex flex-column justify-content-around bg-white shadow-lg   rounded-3  mt-5 mb-3 m-1 m-md-5 p-3  px-1" style={{"minHeight":"76vh"}}>
                 
-                <div className="col-12  d-flex flex-column justify-content-center mb-2">
-                  <h2 className="mb-3">Quiz title</h2>
-                  <input type="text" value={title} className="input-text" onChange={e => addtitle(e.target.value)} style={{"width":"50%","marginLeft":"25%","borderRadius":"16px","paddingLeft":"5%"}}></input>
+                <div className="d-flex flex-column justify-content-center align-items-center">
+                  <h2 className="">Quiz title</h2>
+                  <input type="text" value={title} className="input-text" onChange={e => addtitle(e.target.value)} style={{"width":"68%","borderRadius":"25px"}}></input>
                 </div>
 
-                <div className="col-12  add-question">
+                <div className="add-question">
                     <button onClick={() => buttontrigger(true)} className="d-button" style={{"width":"150px","borderRadius":"26px","height":"45px"}}>ADD QUESTION</button>
-                    {show ? (<Addquestion show={buttontrigger} handlequestion={addquestions} /> ) : null}
+                    {show ? (<Addquestion show={buttontrigger} handlequestion={addquestions} item={null}/> ) : null}
                 </div>
 
-                <div className="col-12  display-questions mb-1">
-                    <h2>Questions:</h2>
-                    <div className="List p-3">
-                      {
-                          questions.map(
-                            item => (
-                              <Listquestions key={item.id} 
-                                questions={item.question} 
-                                length = {item.options.length}
-                              />))
-                      }
+                <div className="display-questions" >
+                    <div className="List bg-light" style={{"min-height":"190px","borderRadius":"16px"}}>
+                      <div className="row" style={{"borderBottom":"2px solid black"}}>
+                        <div className="col-6 col-lg-4 text-center " ><h5>Questions:</h5></div>
+                        <div className="col-1 col-lg-4 " style={{"textAlign":"center"}}><h5>Options:</h5></div>
+                        <div className="col-5 col-lg-4 editdelete" style={{"textAlign":"right"}}><h5>Edit/Delete:</h5></div>
+                      </div>
+                      <div className="row " >
+                        {
+                            questions.map( (item,index) => ( <Listquestions key={index} 
+                                  index = {index}
+                                  question={item.question} 
+                                  item={item}
+                                  length = {item.options.length}
+                                  editquestion={editquestion}
+                                  deletequestion={deletequestion}
+                                />))
+                        }
+                      </div>
                     </div>
                 </div>
 
-                <div className="col-12  d-flex justify-content-center">
+                <div className="d-flex justify-content-center">
                       <button className="d-button" onClick={onsubmit} style={{"width":"150px","borderRadius":"26px","height":"55px"}}>CREATE QUIZ</button>
                 </div>
 
             </div>
 
         </div>
-      </div>    
     </>
     ):(<Showcode id={data.id}/>)
   );

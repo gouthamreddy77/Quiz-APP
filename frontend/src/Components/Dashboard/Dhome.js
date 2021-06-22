@@ -31,8 +31,8 @@ const Dhome = () => {
                          return
                      }
                 setloading(false);
-                setcreated(data.created)
-                setattempted(data.attempted) 
+                setcreated(data.created.reverse())
+                setattempted(data.attempted.reverse()) 
             }
             catch(err){
                 console.log(err);
@@ -51,7 +51,7 @@ const Dhome = () => {
                 loading === true ? 
                 <>
                     <div className="d-flex justify-content-center m-5">
-                        <h1>Loading...</h1>
+                        <h1 className="fw-bold fs-1">Loading...</h1>
                         <div className="spinner-border m-3" role="status">
                             <span className="sr-only "></span>
                         </div>

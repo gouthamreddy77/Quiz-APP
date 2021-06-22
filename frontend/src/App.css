@@ -91,9 +91,7 @@ padding: 1%;
 }
 
 .List{
-  border: 2px solid black;
-  padding: 2%;
-  margin-left: 3%;
+  border: 1px solid black;
 }
 
 .quiz-submit{
@@ -102,12 +100,19 @@ padding: 1%;
 }
 
 .disp-question{
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
 }
 .disp-length{
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
 }
-
+.disp-options{
+  border-bottom: 1px solid black;
+}
+@media screen and (min-width:992px) {
+  .editdelete{
+    text-align: center !important;
+  }
+}
 /* Error css*/
 .Error-cointainer{
   height: 100vh;
@@ -146,6 +151,7 @@ padding: 1%;
   justify-content: space-evenly;
   align-items: center;
   min-height: 100vh;
+  padding-bottom: 8%;
 }
 .quiztitle{
   color: #ffffff;
@@ -164,6 +170,16 @@ padding: 1%;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: center;
+}
+@media screen and (max-width:992px) {
+  .Displayquiz{
+    width: 87%;
+  }
+}
+@media screen and (max-width:576px) {
+  .Displayquiz{
+    width: 97%;
+  }
 }
 .question-section{
   display: flex;
@@ -223,6 +239,11 @@ padding: 1%;
   width: 80%;
   height: 80%;
   border-radius: 20px;
+}
+@media screen and (max-width:576px) {
+  .react-responsive-modal-modal{
+    width: 94%;
+  }
 }
 
 .register1 ,.login1 ,.createrow{
@@ -290,3 +311,4 @@ input{
   background-color: white;
   margin: 6px 0;
 }
+
